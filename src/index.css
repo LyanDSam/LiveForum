@@ -61,6 +61,96 @@
   --shadow-lg: 0 10px 15px -3px rgba(255,255,255,0.1);
 }
 
+/* ── Green Tea Theme ── */
+[data-theme="green-tea"] {
+  --bg-page: #F0FDF4;
+  --bg-surface: #FFFFFF;
+  --bg-surface-hover: #DCFCE7;
+  --border-light: #BBF7D0;
+  --text-primary: #14532D;
+  --text-secondary: #166534;
+  --text-tertiary: #4ADE80;
+  --accent: #16A34A;
+  --accent-hover: #15803D;
+  --danger: #EF4444;
+
+  --shadow-sm: 0 1px 2px rgba(22, 163, 74, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(22, 163, 74, 0.08);
+  --shadow-lg: 0 10px 15px -3px rgba(22, 163, 74, 0.1);
+}
+
+/* ── Blue Ocean Theme ── */
+[data-theme="blue-ocean"] {
+  --bg-page: #EFF6FF;
+  --bg-surface: #FFFFFF;
+  --bg-surface-hover: #DBEAFE;
+  --border-light: #BFDBFE;
+  --text-primary: #1E3A8A;
+  --text-secondary: #1D4ED8;
+  --text-tertiary: #60A5FA;
+  --accent: #0284C7;
+  --accent-hover: #0369A1;
+  --danger: #F43F5E;
+
+  --shadow-sm: 0 1px 2px rgba(2, 132, 199, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(2, 132, 199, 0.08);
+  --shadow-lg: 0 10px 15px -3px rgba(2, 132, 199, 0.1);
+}
+
+/* ── Purple Block Theme ── */
+[data-theme="purple-block"] {
+  --bg-page: #FAF5FF;
+  --bg-surface: #FFFFFF;
+  --bg-surface-hover: #F3E8FF;
+  --border-light: #E9D5FF;
+  --text-primary: #4C1D95;
+  --text-secondary: #6D28D9;
+  --text-tertiary: #A78BFA;
+  --accent: #7C3AED;
+  --accent-hover: #6D28D9;
+  --danger: #E11D48;
+
+  --shadow-sm: 0 1px 2px rgba(124, 58, 237, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(124, 58, 237, 0.08);
+  --shadow-lg: 0 10px 15px -3px rgba(124, 58, 237, 0.1);
+}
+
+/* ── Vampire Theme ── */
+[data-theme="vampire"] {
+  --bg-page: #1A000A;
+  --bg-surface: #2D0A16;
+  --bg-surface-hover: #430F21;
+  --border-light: #6E1A36;
+  --text-primary: #FFE4E6;
+  --text-secondary: #FDA4AF;
+  --text-tertiary: #FB7185;
+  --accent: #EF233C;
+  --accent-hover: #D90429;
+  --danger: #F59E0B;
+
+  --shadow-sm: 0 1px 2px rgba(239, 35, 60, 0.15);
+  --shadow-md: 0 4px 6px -1px rgba(239, 35, 60, 0.25);
+  --shadow-lg: 0 10px 15px -3px rgba(239, 35, 60, 0.35);
+}
+
+/* ── Sunny Theme ── */
+[data-theme="sunny"] {
+  --bg-page: #FFFBEB;
+  --bg-surface: #FFFFFF;
+  --bg-surface-hover: #FEF3C7;
+  --border-light: #FDE68A;
+  --text-primary: #78350F;
+  --text-secondary: #92400E;
+  --text-tertiary: #FBBF24;
+  --accent: #D97706;
+  --accent-hover: #B45309;
+  --danger: #DC2626;
+
+  --shadow-sm: 0 1px 2px rgba(217, 119, 6, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(217, 119, 6, 0.08);
+  --shadow-lg: 0 10px 15px -3px rgba(217, 119, 6, 0.1);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;

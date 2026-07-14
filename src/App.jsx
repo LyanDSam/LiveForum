@@ -13,7 +13,7 @@ import { useTheme } from './hooks/useTheme';
 import { Plus, Search } from 'lucide-react';
 import './App.css';
 
-function Home({ user, onRequireAuth, theme, onThemeToggle }) {
+function Home({ user, onRequireAuth, theme, onSetTheme }) {
   const navigate = useNavigate();
   const [forums, setForums] = useState([]);
   const [showCreateModal, setShowCreateModal] = useState(false);
@@ -76,7 +76,7 @@ function Home({ user, onRequireAuth, theme, onThemeToggle }) {
           <button className="btn-secondary search-trigger-btn" onClick={() => setShowSearchModal(true)}>
             <Search size={16} /> Search
           </button>
-          <ThemeToggle theme={theme} onToggle={onThemeToggle} />
+          <ThemeToggle theme={theme} onSetTheme={onSetTheme} />
           {user && (
             <button className="btn-primary create-btn" onClick={handleCreateClick}>
               <Plus size={16} /> New Forum
@@ -147,7 +147,7 @@ function Home({ user, onRequireAuth, theme, onThemeToggle }) {
 function App() {
   const [session, setSession] = useState(null);
   const [showAuthModal, setShowAuthModal] = useState(false);
-  const { theme, cycleTheme } = useTheme();
+  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
@@ -177,7 +177,7 @@ function App() {
               user={session?.user}
               onRequireAuth={handleRequireAuth}
               theme={theme}
-              onThemeToggle={cycleTheme}
+              onSetTheme={setTheme}
             />
           } />
           <Route path="/forum/:id" element={
