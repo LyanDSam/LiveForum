@@ -8,10 +8,12 @@ import ChatRoom from './components/ChatRoom';
 import CreateForumModal from './components/CreateForumModal';
 import SearchPopupModal from './components/SearchPopupModal';
 import Logo from './components/Logo';
+import ThemeToggle from './components/ThemeToggle';
+import { useTheme } from './hooks/useTheme';
 import { Plus, Search } from 'lucide-react';
 import './App.css';
 
-function Home({ user, onRequireAuth }) {
+function Home({ user, onRequireAuth, theme, onThemeToggle }) {
   const navigate = useNavigate();
   const [forums, setForums] = useState([]);
   const [showCreateModal, setShowCreateModal] = useState(false);
@@ -74,6 +76,7 @@ function Home({ user, onRequireAuth }) {
           <button className="btn-secondary search-trigger-btn" onClick={() => setShowSearchModal(true)}>
             <Search size={16} /> Search
           </button>
+          <ThemeToggle theme={theme} onToggle={onThemeToggle} />
           {user && (
             <button className="btn-primary create-btn" onClick={handleCreateClick}>
               <Plus size={16} /> New Forum
@@ -144,6 +147,7 @@ function Home({ user, onRequireAuth }) {
 function App() {
   const [session, setSession] = useState(null);
   const [showAuthModal, setShowAuthModal] = useState(false);
+  const { theme, cycleTheme } = useTheme();
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
@@ -168,7 +172,14 @@ function App() {
     <Router>
       <div className="app-wrapper">
         <Routes>
-          <Route path="/" element={<Home user={session?.user} onRequireAuth={handleRequireAuth} />} />
+          <Route path="/" element={
+            <Home
+              user={session?.user}
+              onRequireAuth={handleRequireAuth}
+              theme={theme}
+              onThemeToggle={cycleTheme}
+            />
+          } />
           <Route path="/forum/:id" element={
             session?.user ? (
               <ChatRoomWrapper user={session.user} />
